@@ -1,10 +1,11 @@
-# Chat app
+# Web Chat app
+
 ### Technology used
 * **Flask** - used for server side
 * **Socket.IO** - used for one-to-one connections
 
 ## Project files
-Program consists of 7 files:
+Program consists of 7 files
 
 ### Python files
 * **app.py** - init Flask and Socket.IO variable
@@ -19,7 +20,23 @@ Program consists of 7 files:
 
 ## How it works
 
-## To start the chat:
+After the server starts, the chat room login window opens, the **index** function is used for this.
+After entering data, the same function enters data into the session and redirects to *'/chat'*. 
+The **chat** function reads data from the session and render template with data. 
+After the document has been loaded, the socket is connecting to the server(site) 
+and JS functions are loaded for working with Socket.IO.
+<br>
+* **socket.on('Event')** - responsible for sockets event actions 
+    * *connect* - alerts that the user has been connected
+    * *message* - display user message
+    * *options* - display option message as 'connect' or 'disconnect'
+    * *disconnect* - alerts that the user has been disconnected
+
+* **send_message** - reads text from *textarea* and add a new message at the end
+* **disconnect** - check user connection and leave room if user connected 
+(use *Send* button or *Enter* key for send message)
+
+## How to use
 
 1. Run main.py on your computer.
 The server will be running at 'http://localhost:5000'.
