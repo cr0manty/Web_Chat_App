@@ -14,7 +14,7 @@
         socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
 
         socket.on('connect', function() {
-            socket.emit('message', {});
+            socket.emit('options', {});
         });
         socket.on('message', function(data) {
             var chat = document.getElementById("chat");
@@ -44,9 +44,6 @@
         document.getElementById("text").value = '';
         socket.emit('message', {msg: text});
     }
-
-
-
 </script>
 {% endblock %}
 
