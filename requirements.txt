@@ -1,0 +1,4 @@
+flask
+wtforms
+flask_wtf
+flask_socketio

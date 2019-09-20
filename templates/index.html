@@ -1,0 +1,23 @@
+﻿{% extends "base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content_title %}
+Login in
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('index') }}" method="POST">
+    {{ form.hidden_tag() }}
+    <label for="username">Username</label>
+      {{ form.username(class_="form-control") }}
+      <br>
+    <label for="room">Room</label>
+      {{ form.room(class_="form-control") }}
+      <br>
+    {{ form.submit(class_="btn btn-danger") }}
+</form>
+
+{% endblock %}
